@@ -16,33 +16,57 @@ export default function Module_1() {
     <SafeAreaView style={styles.container}>
       <StatusBar style="light" />
 
-      <View style={{ height: 100 }}></View>
+      <View style={{ height: 40 }}></View>
 
       <Text style={[styles.text, { fontSize: 25 }]}> BMI Calculator</Text>
 
+      <View style={{ height: 30 }}></View>
+
       <View style={styles.male_Female_ButtonGroup}>
-        <Image
-          style={styles.image_Male_Female}
-          source={require("../assets/male_1.png")}
-        />
-        <Image
-          style={styles.image_Male_Female}
-          source={require("../assets/female_1.jpg")}
-        />
+        <View style={styles.text_Image_Group}>
+          <Image
+            style={styles.image_Male_Female}
+            source={require("../assets/male_1.png")}
+          />
+          <Text style={styles.text}> Male </Text>
+        </View>
+
+        <View style={styles.text_Image_Group}>
+          <Image
+            style={styles.image_Male_Female}
+            source={require("../assets/female_1.jpg")}
+          />
+          <Text style={styles.text}> Female </Text>
+        </View>
       </View>
 
-      <View style={{ height: 60 }}></View>
+      <View style={{ height: 20 }}></View>
 
-      
-      <View style={{ height: 240 }}></View>
+      <View style={styles.height_Group}>
+        <Text style={styles.textHeight}> Height</Text>
+        <View style={styles.centimeter_Group}>
+          <Text style={styles.textHeightNumber}> 118</Text>
+          <Text style={styles.text_cm}> cm</Text>
+        </View>
+      </View>
+
+
+      <View style={styles.weight_Age_Group}>
+        <View style={styles.text_Image_Group}>
+          <Text style={styles.text_Weight_Age}> Weight </Text>
+        </View>
+
+        <View style={styles.text_Image_Group}>
+          <Text style={styles.text_Weight_Age}> Age </Text>
+        </View>
+      </View>
+
+
+      <View style={{ height: 40 }}></View>
 
       <View style={styles.linkButtonGroup}>
         <TouchableOpacity style={styles.linkButton}>
-          <Text style={styles.text}>Settings</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.linkButton}>
-          <Text style={styles.text}>About</Text>
+          <Text style={styles.textCalculate}> Calculate</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
@@ -62,36 +86,57 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginLeft: 10,
   },
-  hienThiThongBao: {
-    width: "90%",
-    marginTop: 15,
-  },
-  lockIcon: {
-    fontSize: 20,
-    color: "gray",
-    position: "absolute",
-    top: 18,
-    left: 20,
-    zIndex: 1,
-  },
-  thongBao: {
-    height: 60,
-    backgroundColor: "#fff",
-    borderRadius: 40,
+  text_Weight_Age: {
+    color: "#7e808e",
+    fontSize: 15,
+    lineHeight: 40,
     textAlign: "center",
+    marginLeft: 10,
+  },
+
+  textCalculate: {
+    color: "#fff",
+    fontSize: 15,
+    width: 350,
+    lineHeight: 40,
+    textAlign: "center",
+    marginLeft: 10,
+    backgroundColor: "#e83d66",
+  },
+  textHeight: {
+    color: "#7e808e",
+    fontSize: 15,
+    lineHeight: 40,
+    textAlign: "center",
+    marginLeft: 10,
+    backgroundColor: "#323344",
+  },
+
+  textHeightNumber: {
+    color: "#fff",
+    fontSize: 24,
+    lineHeight: 40,
+    textAlign: "center",
+    marginLeft: 10,
+    backgroundColor: "#323344",
+  },
+
+  text_cm: {
+    color: "#fff",
     fontSize: 18,
-    color: "#000",
-    width: "100%",
-    fontWeight: "bold",
-  },
-  loginButton: {
-    marginTop: 15,
-    height: 50,
-    backgroundColor: "#8d015a",
-    borderRadius: 25,
+    lineHeight: 40,
     textAlign: "center",
-    fontSize: 20,
-    width: "90%",
+    marginLeft: 10,
+    backgroundColor: "#323344",
+  },
+
+
+  centimeter_Group: {
+    flexDirection: "row",
+    lineHeight: 40,
+    textAlign: "center",
+    marginLeft: 10,
+    backgroundColor: "#323344",
   },
   linkButtonGroup: {
     flexDirection: "row",
@@ -101,14 +146,30 @@ const styles = StyleSheet.create({
   male_Female_ButtonGroup: {
     flexDirection: "row",
     justifyContent: "space-between",
-    width: "90%",
+  },
+  weight_Age_Group: {
+    width: 350,
+    height: 150,
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+
+  text_Image_Group: {
+    flexDirection: "column",
+    justifyContent: "space-between",
   },
   image_Male_Female: {
-      width:150,
-      height:150,
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor:"#24263b",
-  
+    width: 150,
+    height: 150,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#24263b",
+  },
+  height_Group: {
+    width: 350,
+    height: 150,
+    flexDirection: "column",
+    justifyContent: "space-between",
+    backgroundColor: "#323344",
   },
 });

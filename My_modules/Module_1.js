@@ -58,8 +58,20 @@ export default function Module_1() {
           <Text style={styles.text_Weight_Age}> Weight </Text>
           <Text style={styles.number_Weight_Age}> 50 </Text>
           <View style={styles.minus_Plus_Group}>
-            <Text style={styles.minus_Plus_Text}> - </Text>
-            <Text style={styles.minus_Plus_Text}> + </Text>
+          <TouchableOpacity>
+              <Image
+                style={styles.image_Minus_Plus}
+                source={require("../assets/minus_white_1.png")}
+              />
+            </TouchableOpacity>
+
+            <TouchableOpacity>
+              <Image
+                style={styles.image_Minus_Plus}
+                source={require("../assets/plus_white_1.png")}
+              />
+            </TouchableOpacity>
+
           </View>
         </View>
 
@@ -70,14 +82,14 @@ export default function Module_1() {
             <TouchableOpacity>
               <Image
                 style={styles.image_Minus_Plus}
-                source={require("../assets/minus_1.png")}
+                source={require("../assets/minus_white_1.png")}
               />
             </TouchableOpacity>
 
             <TouchableOpacity>
               <Image
                 style={styles.image_Minus_Plus}
-                source={require("../assets/plus_1.png")}
+                source={require("../assets/plus_white_1.png")}
               />
             </TouchableOpacity>
           </View>
@@ -189,11 +201,12 @@ const styles = StyleSheet.create({
   },
 
   image_Minus_Plus: {
-    width: 50,
-    height: 50,
+    width: 40,
+    height: 40,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#24263b",
+    borderRadius:15,
   },
 
   text_Image_Group: {

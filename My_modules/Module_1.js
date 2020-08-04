@@ -16,31 +16,34 @@ export default function Module_1() {
     <SafeAreaView style={styles.container}>
       <StatusBar style="light" />
 
-      <View style={{ height: 40 }}></View>
-
-      <Text style={[styles.text, { fontSize: 25 }]}> BMI Calculator</Text>
-
+      <Text style={[styles.text, { fontSize: 25, marginTop: 50 }]}>
+        {" "}
+        BMI Calculator
+      </Text>
       <View style={{ height: 30 }}></View>
-
       <View style={styles.male_Female_ButtonGroup}>
         <View style={styles.text_Image_Group}>
-          <Image
-            style={styles.image_Male_Female}
-            source={require("../assets/male_1.png")}
-          />
+          <TouchableOpacity>
+            <Image
+              style={styles.image_Male_Female}
+              source={require("../assets/male_1.png")}
+            />
+          </TouchableOpacity>
+
           <Text style={styles.text}> Male </Text>
         </View>
 
         <View style={styles.text_Image_Group}>
-          <Image
-            style={styles.image_Male_Female}
-            source={require("../assets/female_1.png")}
-          />
+          <TouchableOpacity>
+            <Image
+              style={styles.image_Male_Female}
+              source={require("../assets/female_1.png")}
+            />
+          </TouchableOpacity>
+
           <Text style={styles.text}> Female </Text>
         </View>
       </View>
-
-      <View style={{ height: 20 }}></View>
 
       <View style={styles.height_Group}>
         <Text style={styles.textHeight}> Height</Text>
@@ -49,7 +52,6 @@ export default function Module_1() {
           <Text style={styles.text_cm}> cm</Text>
         </View>
       </View>
-
 
       <View style={styles.weight_Age_Group}>
         <View style={styles.text_Image_Group}>
@@ -65,17 +67,24 @@ export default function Module_1() {
           <Text style={styles.text_Weight_Age}> Age </Text>
           <Text style={styles.number_Weight_Age}> 20 </Text>
           <View style={styles.minus_Plus_Group}>
-            <Text style={styles.minus_Plus_Text}> - </Text>
-            <Text style={styles.minus_Plus_Text}> + </Text>
-          </View>
+            <TouchableOpacity>
+              <Image
+                style={styles.image_Minus_Plus}
+                source={require("../assets/minus_1.png")}
+              />
+            </TouchableOpacity>
 
+            <TouchableOpacity>
+              <Image
+                style={styles.image_Minus_Plus}
+                source={require("../assets/plus_1.png")}
+              />
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
 
-
-      <View style={{ height: 40 }}></View>
-
-      <View style={styles.linkButtonGroup}>
+      <View style={styles.calculateGroup}>
         <TouchableOpacity style={styles.linkButton}>
           <Text style={styles.textCalculate}> Calculate</Text>
         </TouchableOpacity>
@@ -108,20 +117,17 @@ const styles = StyleSheet.create({
   number_Weight_Age: {
     color: "#fff",
     fontSize: 30,
-    fontWeight:"bold",
+    fontWeight: "bold",
     lineHeight: 30,
     textAlign: "center",
     marginLeft: 10,
   },
-
-
   textCalculate: {
     color: "#fff",
     fontSize: 15,
     width: 350,
     lineHeight: 40,
     textAlign: "center",
-    marginLeft: 10,
     backgroundColor: "#e83d66",
   },
   textHeight: {
@@ -151,7 +157,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#323344",
   },
 
-
   centimeter_Group: {
     flexDirection: "row",
     lineHeight: 40,
@@ -159,10 +164,10 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     backgroundColor: "#323344",
   },
-  linkButtonGroup: {
+  calculateGroup: {
     flexDirection: "row",
     justifyContent: "space-between",
-    width: "90%",
+    marginTop: 40,
   },
   male_Female_ButtonGroup: {
     flexDirection: "row",
@@ -174,13 +179,21 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
   },
-  minus_Plus_Group:{
+  minus_Plus_Group: {
     flexDirection: "row",
     justifyContent: "space-around",
   },
-  minus_Plus_Text:{
-    color:"#fff",
+  minus_Plus_Text: {
+    color: "#fff",
     fontSize: 30,
+  },
+
+  image_Minus_Plus: {
+    width: 50,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#24263b",
   },
 
   text_Image_Group: {
@@ -200,5 +213,6 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "space-between",
     backgroundColor: "#323344",
+    marginTop: 40,
   },
 });

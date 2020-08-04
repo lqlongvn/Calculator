@@ -34,7 +34,7 @@ export default function Module_1() {
         <View style={styles.text_Image_Group}>
           <Image
             style={styles.image_Male_Female}
-            source={require("../assets/female_1.jpg")}
+            source={require("../assets/female_1.png")}
           />
           <Text style={styles.text}> Female </Text>
         </View>
@@ -54,10 +54,21 @@ export default function Module_1() {
       <View style={styles.weight_Age_Group}>
         <View style={styles.text_Image_Group}>
           <Text style={styles.text_Weight_Age}> Weight </Text>
+          <Text style={styles.number_Weight_Age}> 50 </Text>
+          <View style={styles.minus_Plus_Group}>
+            <Text style={styles.minus_Plus_Text}> - </Text>
+            <Text style={styles.minus_Plus_Text}> + </Text>
+          </View>
         </View>
 
         <View style={styles.text_Image_Group}>
           <Text style={styles.text_Weight_Age}> Age </Text>
+          <Text style={styles.number_Weight_Age}> 20 </Text>
+          <View style={styles.minus_Plus_Group}>
+            <Text style={styles.minus_Plus_Text}> - </Text>
+            <Text style={styles.minus_Plus_Text}> + </Text>
+          </View>
+
         </View>
       </View>
 
@@ -89,10 +100,20 @@ const styles = StyleSheet.create({
   text_Weight_Age: {
     color: "#7e808e",
     fontSize: 15,
-    lineHeight: 40,
+    lineHeight: 30,
     textAlign: "center",
     marginLeft: 10,
   },
+
+  number_Weight_Age: {
+    color: "#fff",
+    fontSize: 30,
+    fontWeight:"bold",
+    lineHeight: 30,
+    textAlign: "center",
+    marginLeft: 10,
+  },
+
 
   textCalculate: {
     color: "#fff",
@@ -153,14 +174,22 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
   },
+  minus_Plus_Group:{
+    flexDirection: "row",
+    justifyContent: "space-around",
+  },
+  minus_Plus_Text:{
+    color:"#fff",
+    fontSize: 30,
+  },
 
   text_Image_Group: {
     flexDirection: "column",
     justifyContent: "space-between",
   },
   image_Male_Female: {
-    width: 150,
-    height: 150,
+    width: 120,
+    height: 120,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#24263b",

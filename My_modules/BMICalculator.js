@@ -13,9 +13,9 @@ import {
   ScrollView,
   StatusBar,
   Button,
-  Slider
+  // Slider
 } from "react-native";
-// import Slider from "@react-native-community/slider";
+import Slider from "@react-native-community/slider";
 // import Gender from "./Gender";
 
 const windowWidth = Dimensions.get("window").width;

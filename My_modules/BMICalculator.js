@@ -1,5 +1,5 @@
 import React from "react";
-import { FontAwesome5, Ionicons, Foundation, Entypo } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
 
 import {
   StyleSheet,
@@ -13,10 +13,10 @@ import {
   ScrollView,
   StatusBar,
   Button,
-  // Slider
 } from "react-native";
 import Slider from "@react-native-community/slider";
-// import Gender from "./Gender";
+import Gender from "./Gender";
+import { BMI_VALUE } from "./style";
 
 const windowWidth = Dimensions.get("window").width;
 
@@ -29,21 +29,8 @@ export default function BMICalculator() {
           <Text style={styles.textHeader}>BMI CALCULATOR</Text>
         </View>
         <View style={styles.content}>
-          <View style={styles.gender}>
-            <TouchableOpacity>
-              <View style={styles.maleOption}>
-                <Foundation name="male-symbol" size={70} color="#50c8ed" />
-                <Text style={{ color: "#7a7c8a" }}>MALE</Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <View style={styles.femaleOption}>
-                <Foundation name="female-symbol" size={70} color="#e74f25" />
-                <Text style={{ color: "#7a7c8a" }}>FEMALE</Text>
-              </View>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.heightBox}>
+           <Gender />
+           <View style={styles.heightBox}>
             <Text style={{ color: "#7a7c8a" }}>HEIGHT</Text>
             <Text style={styles.heightInfo}>150 cm</Text>
             <Slider
@@ -126,12 +113,6 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 15,
   },
-  gender: {
-    flex: 2,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
   heightBox: {
     height: 140,
     backgroundColor: "#323344",
@@ -150,27 +131,8 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
   },
-  maleOption: {
-    backgroundColor: "#24263b",
-    width: (windowWidth * 42) / 100,
-    height: (windowWidth * 42) / 100,
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: 7,
-  },
-  femaleOption: {
-    backgroundColor: "#323344",
-    width: (windowWidth * 42) / 100,
-    height: (windowWidth * 42) / 100,
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: 7,
-  },
   heightInfo: {
-    color: "white",
-    fontSize: 26,
-    fontWeight: "bold",
-    alignItems: "flex-end",
+    ...BMI_VALUE,
   },
   weightBox: {
     backgroundColor: "#323344",

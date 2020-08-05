@@ -1,20 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { View, StyleSheet, Dimensions, Text } from "react-native";
 import Slider from "@react-native-community/slider";
 const windowWidth = Dimensions.get("window").width;
 
+
 export default function Height() {
+  const [height, setHeight] = useState(100);
   return (
     <View style={styles.heightBox}>
       <Text style={{ color: "#7a7c8a" }}>HEIGHT</Text>
-      <Text style={styles.heightInfo}>150 cm</Text>
+  <Text style={styles.heightInfo}> {height} cm</Text>
       <Slider
         style={{ width: (windowWidth * 85) / 100, height: 40 }}
         minimumValue={0}
-        maximumValue={1}
+        maximumValue={200}
         minimumTrackTintColor="#744b60"
         maximumTrackTintColor="black"
+        step ={1}
+        value={height}
+        onValueChange={(value)=>setHeight(value)}
       />
     </View>
   );

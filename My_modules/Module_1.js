@@ -9,7 +9,8 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
-import { Ionicons, FontAwesome5 } from "@expo/vector-icons";
+import { Foundation } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
 
 export default function Module_1() {
   return (
@@ -24,10 +25,7 @@ export default function Module_1() {
       <View style={styles.male_Female_ButtonGroup}>
         <View style={styles.text_Image_Group}>
           <TouchableOpacity>
-            <Image
-              style={styles.image_Male_Female}
-              source={require("../assets/male_1.png")}
-            />
+            <Foundation name="male-symbol" size={70} color="#50c8ed" />
           </TouchableOpacity>
 
           <Text style={styles.text}> Male </Text>
@@ -35,10 +33,7 @@ export default function Module_1() {
 
         <View style={styles.text_Image_Group}>
           <TouchableOpacity>
-            <Image
-              style={styles.image_Male_Female}
-              source={require("../assets/female_1.png")}
-            />
+            <Foundation name="female-symbol" size={70} color="#50c8ed" />
           </TouchableOpacity>
 
           <Text style={styles.text}> Female </Text>
@@ -58,20 +53,12 @@ export default function Module_1() {
           <Text style={styles.text_Weight_Age}> Weight </Text>
           <Text style={styles.number_Weight_Age}> 50 </Text>
           <View style={styles.minus_Plus_Group}>
-          <TouchableOpacity>
-              <Image
-                style={styles.image_Minus_Plus}
-                source={require("../assets/minus_white_1.png")}
-              />
-            </TouchableOpacity>
-
             <TouchableOpacity>
-              <Image
-                style={styles.image_Minus_Plus}
-                source={require("../assets/plus_white_1.png")}
-              />
+              <Entypo name="minus" size={24} color="white" />
             </TouchableOpacity>
-
+            <TouchableOpacity>
+              <Entypo name="plus" size={24} color="white" />
+            </TouchableOpacity>
           </View>
         </View>
 
@@ -80,17 +67,11 @@ export default function Module_1() {
           <Text style={styles.number_Weight_Age}> 20 </Text>
           <View style={styles.minus_Plus_Group}>
             <TouchableOpacity>
-              <Image
-                style={styles.image_Minus_Plus}
-                source={require("../assets/minus_white_1.png")}
-              />
+              <Entypo name="minus" size={24} color="white" />
             </TouchableOpacity>
 
             <TouchableOpacity>
-              <Image
-                style={styles.image_Minus_Plus}
-                source={require("../assets/plus_white_1.png")}
-              />
+              <Entypo name="plus" size={24} color="white" />
             </TouchableOpacity>
           </View>
         </View>
@@ -206,7 +187,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#24263b",
-    borderRadius:15,
+    borderRadius: 15,
   },
 
   text_Image_Group: {

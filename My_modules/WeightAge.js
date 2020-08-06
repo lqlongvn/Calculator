@@ -12,18 +12,41 @@ import { BMI_VALUE } from "./style";
 const windowWidth = Dimensions.get("window").width;
 
 export default function WeightAge() {
+  const [weight, setWeight] = useState(10);
+  const [age, setAge] = useState(10);
+
+  const decreaseWeight =() => {
+    setWeight(weight-1);
+  }
+
+  const increaseWeight =() => {
+    setWeight(weight+1);
+  }
+
+  const decreaseAge =() => {
+    setAge(age-1);
+  }
+
+  const increaseAge =() => {
+    setAge(age+1);
+  }
+
+  const increase = (type)=> {
+    
+  }
+
   return (
     <View style={styles.info}>
       <View style={styles.weightBox}>
         <Text style={{ color: "#7a7c8a" }}>WEIGHT</Text>
-        <Text style={styles.heightInfo}>50</Text>
+        <Text style={styles.heightInfo}> {weight}</Text>
         <View style={{ flexDirection: "row" }}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={decreaseWeight}>
             <View style={styles.minusBox}>
               <Entypo name="minus" size={24} color="white" />
             </View>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => increaseWeight}>
             <View style={styles.plusBox}>
               <Entypo name="plus" size={24} color="white" />
             </View>
@@ -32,14 +55,14 @@ export default function WeightAge() {
       </View>
       <View style={styles.weightBox}>
         <Text style={{ color: "#7a7c8a" }}>AGE</Text>
-        <Text style={styles.heightInfo}>20</Text>
+        <Text style={styles.heightInfo}>{age}</Text>
         <View style={{ flexDirection: "row" }}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={decreaseAge}>
             <View style={styles.minusBox}>
               <Entypo name="minus" size={24} color="white" />
             </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
+          </TouchableOpacity >
+          <TouchableOpacity onPress={increaseAge}>
             <View style={styles.plusBox}>
               <Entypo name="plus" size={24} color="white" />
             </View>

@@ -16,7 +16,7 @@ export default function WeightAge() {
   const [age, setAge] = useState(10);
 
   const decreaseWeight =() => {
-    setWeight(weight-1);
+    if (weight>1) {setWeight(weight-1)};
   }
 
   const increaseWeight =() => {
@@ -24,11 +24,11 @@ export default function WeightAge() {
   }
 
   const decreaseAge =() => {
-    setAge(age-1);
+    if (age>1) {setAge(age-1)};
   }
 
   const increaseAge =() => {
-    setAge(age+1);
+    if (age>150) {setAge(age+1)};
   }
 
   const increase = (type)=> {

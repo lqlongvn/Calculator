@@ -28,11 +28,17 @@ export default function WeightAge() {
   }
 
   const increaseAge =() => {
-    if (age>150) {setAge(age+1)};
+    if (age<150) {setAge(age+1)};
   }
 
   const increase = (type)=> {
-    
+    if (type==1){
+      //Tăng cân nặng
+      setWeight(weight+1);
+    } else {
+      //Tăng tuổi
+      if (age<150) {setAge(age+1)};
+    }
   }
 
   return (
@@ -46,7 +52,7 @@ export default function WeightAge() {
               <Entypo name="minus" size={24} color="white" />
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => increaseWeight}>
+          <TouchableOpacity onPress={() => increase(1)}>
             <View style={styles.plusBox}>
               <Entypo name="plus" size={24} color="white" />
             </View>
@@ -62,7 +68,7 @@ export default function WeightAge() {
               <Entypo name="minus" size={24} color="white" />
             </View>
           </TouchableOpacity >
-          <TouchableOpacity onPress={increaseAge}>
+          <TouchableOpacity onPress={() => increase(2)}>
             <View style={styles.plusBox}>
               <Entypo name="plus" size={24} color="white" />
             </View>

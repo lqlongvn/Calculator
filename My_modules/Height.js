@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { View, StyleSheet, Dimensions, Text } from "react-native";
 import Slider from "@react-native-community/slider";
 const windowWidth = Dimensions.get("window").width;
+import { BMI_VALUE } from "./style";
 
 
 export default function Height() {
@@ -34,5 +35,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-around",
   },
+  heightInfo: {
+    ...BMI_VALUE,
+  },
+
 
 });

@@ -4,8 +4,8 @@ import BMICalculator from "./My_modules/BMICalculator";
 
 
 export default function App() {
-  return <Module_1 />;
-  // return <BMICalculator />;
+  //return <Module_1 />;
+  return <BMICalculator />;
   
 }
 

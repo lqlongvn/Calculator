@@ -22,10 +22,19 @@ export default function BMICalculator() {
   const [modalVisible, setModalVisible] = useState(false);
   const [gender, setGender] = useState("male");
 
+  const [weight, setWeight] = useState(10);
+  const [age, setAge] = useState(10);
+
+
   function calculateBmi() {
     setModalVisible(true);
 
     // Tính chỉ số BMI
+    <Text style={{ color: "red" }}>
+    Hello: {gender}
+    </Text>
+
+
   }
 
   return (
@@ -42,7 +51,7 @@ export default function BMICalculator() {
 
           <Height />
 
-          <WeightAge />
+          <WeightAge weight={weight} />
 
           <View style={styles.calButton}>
             <TouchableOpacity onPress={calculateBmi}>

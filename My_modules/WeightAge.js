@@ -10,9 +10,8 @@ import { Entypo } from "@expo/vector-icons";
 import { BMI_VALUE } from "./style";
 const windowWidth = Dimensions.get("window").width;
 
-export default function WeightAge() {
-  const [weight, setWeight] = useState(10);
-  const [age, setAge] = useState(10);
+export default function WeightAge({age,setAge,weight,setWeight}) {
+  
 
   const decreaseWeight = () => {
     if (weight > 1) setWeight(weight - 1);
